@@ -5,7 +5,7 @@
 <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
 
     <!-- Branding for the navbar - icon and company/website name, for example -->
-    <a class="navbar-brand" href="#top"><img class="mylogo" src="{% static 'portfolio/logo.png' %}"
+    <a class="navbar-brand" href="#top"><img class="mylogo" src="{% static 'logo.png' %}"
         alt="logo" /> My Projects</a>
 
     <!-- This is the button that's displayed for a narrow screen e.g. a smartphone. -->
@@ -23,10 +23,10 @@
                 <a class="nav-link" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="admin/login/?next=/admin/" target="_blank">Admin</a>
+                <a class="nav-link" href="/admin/login/?next=/admin/" target="_blank">Admin</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% static 'portfolio/django.pdf' %}" target="_blank">Django Help</a>
+                <a class="nav-link" href="{% static 'django.pdf' %}" target="_blank">Django Help</a>
             </li>
             <li class="nav-item">
                 <a role="button" class="btn btn-danger" href="{% url 'blog:all_blogs' %}" >Blog</a>

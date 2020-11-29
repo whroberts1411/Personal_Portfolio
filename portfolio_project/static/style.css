@@ -1,0 +1,48 @@
+.navbar {
+    background-color: darksalmon !important;
+}
+.navbar-nav .nav-link {
+    color:rgb(203, 228, 65) !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: red !important;
+}
+
+.mylogo {
+    padding-right: 20px;
+}
+
+.row {
+    padding-left: 20px;
+}
+
+.projimage {
+    height: 250px;
+}
+
+h1 {
+    color: rgb(116, 114, 114);
+}
+
+h1::first-letter {
+    color: rgb(1, 0, 12);
+    font-size: 110%;
+}
+
+h5 {
+    color:rgb(5, 7, 133);
+}
+
+#blogtitle {
+    font-size: 6rem;
+}
+
+@media (min-width: 992px) {
+    #hometext {
+        font-size: 4rem;
+    }
+    #blogdetailtitle {
+        font-size: 5rem;
+    }
+}
