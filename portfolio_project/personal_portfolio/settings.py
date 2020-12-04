@@ -24,9 +24,9 @@ print('BASE_DIR = ',BASE_DIR)
 SECRET_KEY = 'u9863%*yxkq3a)47^$o#@9w(liyxbndpzy3veentpzly40^xfr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['whroberts.eu.pythonanywhere.com',]
 
 # Application definition
 
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'personal_portfolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates', 
+        'DIRS': [BASE_DIR / 'templates',
             ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -118,7 +118,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static',]
+#STATICFILES_DIRS = [BASE_DIR / 'static',]
+STATIC_ROOT = BASE_DIR / 'static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+try:
+    from .local_settings import *
+except ImportError:
+    print('Running on live server')
