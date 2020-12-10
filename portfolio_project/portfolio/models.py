@@ -1,10 +1,16 @@
 from django.db import models
+from django_resized import ResizedImageField
 
 class Project(models.Model):
 
+    # This crops and resizes images that are uploaded to keep the stored
+    # image within a reasonable size. The settings used reduce an image of
+    # 2.3 meg down to 95 kb, for example.
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=250)
-    image = models.ImageField(upload_to='portfolio/images/')
+    image = ResizedImageField(size=[640, 512], crop=['middle','center'],
+                              keep_meta=False, quality=75,
+                              upload_to='portfolio/images/' )
     url = models.URLField(blank=True)
 
     def __str__(self):
