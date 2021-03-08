@@ -15,48 +15,48 @@
 
       <div class="container text-center">
 
-        <h1>My Portfolio Page</h1>
-        <br />
-        <img
-          src="{% static 'bavaria.jpg' %}"
-          height="450"
-          width="450"
-        />
-        <br /><br />
-        <p>
-          <h5>Walking alongside the Neckar River in Heidelberg, December 2015</h5>
-        </p>
-        <hr class="my-4" />
-      </div>
-
-
-      <div class="row">
-
-        {% for project in projects %}
-        <div class="col-lg-4 col-md-6">
-
-          <h4>{{ project.title }}</h4>
-          <img src="{{ project.image.url }}" class="img-fluid mb-2 projimage" />
-          <h6>{{ project.description }}</h6>
-
-          {% if project.url %}
-            <a href="{{ project.url }}" target="_blank">(more details)</a>
-          {% endif %}
-          <br><br>
+        <h1 class="my-3 text-secondary">My Portfolio Page</h1>
+        <div class="row">
+          <div class="col-md-6">
+            <img class="img-fluid" src="{% static 'bavaria.jpg' %}" />
+          </div>
+          <div class="col-md-6">
+            <h5 class="mt-4 text-info">The Neckar River in Heidelberg, December 2015</h5>
+            <p class="lead">
+              Ten days of walking and visiting Christmas markets in Bavaria. We
+              were hoping for snow, but the temperature remained consistently
+              between 4 and 8 degrees the whole time. Rothenburg was particularly
+              impressive, with lots of medieval building, and a town wall surrounding
+              most of the old town. We also stayed in Wurzburg and Heidelberg
+              for 4 days each. A very attractive part of the country, which
+              would be good to visit in the summer, as well.
+            </p>
+          </div>
         </div>
-        {% endfor %}
 
-      </div>
+        <br><br>
+        <hr class="my-4" />
 
+        <h4 class="text-info mb-4">My Online Web Projects - click a button to visit the site</h4>
+        <div class="row">
 
+          {% for project in projects %}
+            <div class="col-lg-4 col-md-6">
 
-      <div class="container text-center">
+              <h4 class="text-secondary">{{ project.title }}</h4>
+              <img src="{{ project.image.url }}" class="img-fluid mb-2 projimage" />
+              <h6>{{ project.description }}</h6>
+
+              {% if project.url %}
+                <a href="{{ project.url }}" target="_blank" class="btn btn-outline-primary btn-sm">More Details</a>
+              {% endif %}
+              <br><br>
+            </div>
+          {% endfor %}
+        </div>
+
         <hr class="my-4">
-        <a href="admin/login/?next=/admin/" class="btn btn-outline-danger"
-          >Admin</a
-        >
-        <a href="blog" class="btn btn-outline-info">Blog</a>
-        <br />
+
       </div>
 
     {% endblock content %}

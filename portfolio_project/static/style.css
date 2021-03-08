@@ -1,3 +1,8 @@
+body {
+	overflow-x: hidden;
+    background-color: ghostwhite;
+}
+
 .navbar {
     background-color: darksalmon !important;
 }
@@ -10,7 +15,10 @@
 }
 
 .mylogo {
-    padding-right: 20px;
+    border-radius: 20px 20px 0 0;
+    height : 40px;
+    width : 40px;
+    margin-right: 20px;
 }
 
 .row {
@@ -19,19 +27,6 @@
 
 .projimage {
     height: 250px;
-}
-
-h1 {
-    color: rgb(116, 114, 114);
-}
-
-h1::first-letter {
-    color: rgb(1, 0, 12);
-    font-size: 110%;
-}
-
-h5 {
-    color:rgb(5, 7, 133);
 }
 
 #blogtitle {

@@ -4,8 +4,7 @@ from django_resized import ResizedImageField
 class Project(models.Model):
 
     # This crops and resizes images that are uploaded to keep the stored
-    # image within a reasonable size. The settings used reduce an image of
-    # 2.3 meg down to 95 kb, for example.
+    # image within a reasonable size. 
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=250)
     image = ResizedImageField(size=[640, 512], crop=['middle','center'],
