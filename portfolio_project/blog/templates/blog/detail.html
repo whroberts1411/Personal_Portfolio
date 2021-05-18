@@ -19,4 +19,11 @@
             <p>{{ blog.blog|safe }}</p>
             <hr class="my-4">
         </div>
+
+        <div class="text-center">
+          <a  href="{% url 'blog:all_blogs' %}" class="btn btn-warning btn-sm my-4">
+            Back to Info Screen
+          </a>
+        </div>
+
     {% endblock content %}
