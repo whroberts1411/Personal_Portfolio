@@ -5,3 +5,4 @@ __pycache__/
 __pycache__\
 local_settings.py
 db.sqlite3
+portfolio_project/db.sqlite3
