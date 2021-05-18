@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
   {% block title %}
-    Blog Page
+    More Info
   {% endblock title %}
 
   {% load static %}
@@ -12,29 +12,30 @@
 
     {% block content %}
 
-      <div class="container text-center">
-        <h1>My Blog Page</h1>
-        {% if length != 1 %}
-          <h3>I've written {{ length }} entries so far</h3>
-        {% else %}
-          <h3>I've written 1 entry so far</h3>
-        {% endif %}
+      <div class="container text-center text-dark">
+        <h1>Further Details of my Websites</h1>
+        <p class="my-3">Click any of the following headings to see the full description of the website.</p>
         <hr class="my-4">
       </div>
 
-      <div class="container text-left">
-        {% for blog in blogs %}
-          <a href="{% url 'blog:detail' blog.id %}"><h4>{{ blog.title }}</h4></a>
-          <h6>{{ blog.date|date:'l jS F, Y' }} at {{ blog.date|date:'H:i' }}</h6>
-          <!-- safe : allow html formatting; striptags : remove html tags from output -->
-          <p>{{ blog.blog|striptags|truncatechars:100 }}</p>
-        {% endfor %}
-      </div>
-
-      <div class="container text-center">
+      <div class="container">
+        <div class="row">
+          {% for blog in blogs %}
+            <div class="col-xl-4 col-md-6">
+              <div class="card text-center mb-4">
+                <div class="card-header bg-secondary">
+                  <a href="{% url 'blog:detail' blog.id %}" class="text-warning">
+                    <h4>{{ blog.title }}</h4>
+                  </a>
+                </div>
+                <p class="card-text text-secondary pb-2">
+                  {{ blog.blog|striptags|truncatechars:100 }}
+                </p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
         <hr class="my-4">
-        <a href="admin/login/?next=/admin/" class="btn btn-outline-danger">Admin</a>
-        <br><br>
       </div>
 
     {% endblock content %}
