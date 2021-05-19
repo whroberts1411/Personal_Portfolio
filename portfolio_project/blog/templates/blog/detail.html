@@ -14,15 +14,15 @@
     {% block content %}
         <div class="container text-left">
             <br>
-            <h1>{{ blog.title }}</h1>
+            <h1 class="text-secondary">{{ blog.title }}</h1>
             <br>
             <p>{{ blog.blog|safe }}</p>
             <hr class="my-4">
         </div>
 
         <div class="text-center">
-          <a  href="{% url 'blog:all_blogs' %}" class="btn btn-warning btn-sm my-4">
-            Back to Info Screen
+          <a  href="{% url 'blog:all_blogs' %}" class="btn btn-warning my-4">
+            Back to the More Info Screen
           </a>
         </div>
 
